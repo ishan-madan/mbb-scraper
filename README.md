@@ -1,7 +1,7 @@
  # $\textsf{\color{skyblue} NCAA Men's Basketball Data Scraper}$
 
 ## $\textsf{\color{lightgreen} Description}$
-This Python program scrapes detailed NCAA Men’s Basketball game and player statistics from ESPN. It retrieves team schedules and player rosters, extracts game statistics such as points, assists, rebounds, and minutes, and compiles them into structured CSV files. Using the BeautifulSoup library for web scraping, the program processes data for specific games this season up until a cutoff date and stores relevant player statistics. This tool allows for customizable stat selection and can be easily adapted to scrape data for different teams by updating the URLs and parameters. The resulting CSV files are organized by player and stat type, ready for analysis.
+This Python program scrapes detailed NCAA Men’s Basketball game and player statistics from ESPN. It retrieves team schedules and player rosters, extracts game statistics such as points, assists, rebounds, and minutes, and compiles them into structured CSV files. Using the BeautifulSoup library for web scraping, the program processes data for specific games this season up until a cutoff date and stores relevant player statistics. This tool allows for customizable stat selection and any number of teams and desired statistics.
 
 ## $\textsf{\color{lightgreen} Key Features}$
 
@@ -11,18 +11,20 @@ This Python program scrapes detailed NCAA Men’s Basketball game and player sta
 ### 2. **Customizable Stat Selection**
 - Easily select and scrape specific player statistics such as points, assists, or three-pointers, allowing for flexible data extraction tailored to your needs.
 
-### 3. **Automatic Data Processing and Export**
+### 3. **Multi-Team Support**
+- Input any number of teams and desired statistics. The program will create a directory for each team, inside which it will generate CSV files for each requested statistic.
+
+### 4. **Automatic Data Processing and Export**
 - Automatically process scraped data into well-organized CSV files by player and stat type, ready for further analysis.
 
-### 4. **Cutoff Date Filtering**
+### 5. **Cutoff Date Filtering**
 - Define a cutoff date to filter out game data that occurs after your specified date, ensuring that only relevant game statistics are collected.
 
-### 5. **Efficient Web Scraping Logic**
+### 6. **Efficient Web Scraping Logic**
 - Utilize BeautifulSoup and Requests libraries to seamlessly navigate ESPN pages, extracting and processing data efficiently.
 
-### 6. **Secure Data Storage and Export**
+### 7. **Secure Data Storage and Export**
 - Automatically create organized folders and export CSV files with clear naming conventions, ensuring data integrity and easy access.
-
   
 ## $\textsf{\color{lightgreen} Languages and Libraries Used}$
 - Python
