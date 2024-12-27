@@ -33,6 +33,7 @@ This Python program scrapes detailed NCAA Men’s Basketball game and player sta
 - os
 - datetime
 - re
+- pyyaml
 
 # $\textsf{\color{skyblue} MBB Scraper Program Walkthrough}$
 
@@ -54,12 +55,21 @@ This Python program scrapes detailed NCAA Men’s Basketball game and player sta
      ```
      python --version
      ```
+     <br>
    - If you don't have it installed, head to [python.org](python.org) to install. Alternatively, if you have homebrew installed, type
      ```
      brew install python
      ```
      into the command window.
-   - Next, open a virtual environment and install the required dependencies by using the following commands.
+     <br>
+     
+   - Next, navigate to the folder where the script has been cloned
+     ```
+      cd ~/path/to/cloned/repo/
+     ```
+     <br>
+     
+   - Finally, open a virtual environment and install the required dependencies by using the following commands.
      <br/>
        - MacOS:
          ```
@@ -79,23 +89,19 @@ This Python program scrapes detailed NCAA Men’s Basketball game and player sta
          source venv/bin/activate
          pip install -r requirements.txt 
          ```
-   - Finally, navigate to the folder where the script has been cloned
-     ```
-      cd ~/path/to/cloned/repo/
-     ```
 
 ## $\textsf{\color{lightgreen} Program Walkthrough}$
 
 3. **Program Walkthrough:**
-   - **Step 1: Opening the Program**
-     - Open the project folder and navigate to the `single_team_scraper.py` file.
+   - **Step 1: Opening the YAML file**
+     - Open the project folder and navigate to the `config.yaml` file.
     <p align="center">
    <img src="ReadMe%20Images/step1.png" height="60%" width="60%" alt="Opening the Program"/>
    </p>
 
-   - **Step 2: Update The Global Variables**
-     - Update the `team_url`, `player_url`, and `team_name` if you want to change the team to scrape
-     - Update the `cutoff_date` to the latest date **THIS SEASON** you would like to scrape
+   - **Step 2: Update The Configuration Variables**
+     - Update the `teams_to_scrape` to the teams you would like data for. Ensure that the names match the official team names listed on the ESPN website.
+     - Update the `cutoff_date` to the latest date **THIS SEASON** you would like to data for
      - Update the `stats_to_pull` to the stats you would like to scrape. Scrapeable stats are listed in the file.
    <p align="center">
    <img src="ReadMe%20Images/step2.png" height="60%" width="60%" alt="Updating Global Variables"/>
@@ -104,14 +110,14 @@ This Python program scrapes detailed NCAA Men’s Basketball game and player sta
    - **Step 3: Run the Program**
      - In the command window where you set up the virtual environment, run
        ```
-       python single_team_scraper.py
+       python mbb_scraper.py
        ```
    <p align="center">
    <img src="ReadMe%20Images/step3.png" height="40%" width="40%" display="inline-block" alt="Running the program"/>
    </p>
 
    - **Step 4: View Stats**
-     - The program will generate a subdirectory containing CSV files with all your scraped statistics.
+     - The program will create a subdirectory for each team, containing a CSV file for each requested statistic.
    <p align="center">
    <img src="ReadMe%20Images/step4.png" height="60%" width="60%" alt="Your outputted files"/>
    </p>
