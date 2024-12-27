@@ -1,18 +1,7 @@
-import datetime
-from helper_methods import scrape_game_and_player_data, scrape_team_ids, single_team_scraper, generate_urls
+from helper_methods import scrape_game_and_player_data, scrape_team_ids, single_team_scraper, generate_urls, get_input_data
 
-# TODO: Input all team names to scrape (separated by commas). Make sure that they are the official names from the ESPN website
-teams_to_scrape = ["Duke Blue Devils", "North Carolina Tar Heels", "UConn Huskies"]
-
-# TODO: Set the cutoff date (will scrape from start of current season until the given date)
-cutoff_date = datetime.datetime(2025, 1, 8)
-
-# TODO: Select the numerical stats you want to pull and add them to the stats_to_pull array. Options listed below:
-# min, fgm, fga, 2pm, 2pa, 3pm, 3pa, ftm, fta, oreb, dreb, reb, ast, stl, blk, to, pf, pts
-stats_to_pull = ['pts', 'ast', 'reb', 'min', 'blk', 'stl']
-
-
-# ---------------------------------------- DO NOT EDIT BELOW THIS LINE ----------------------------------------
+# get input data
+teams_to_scrape, cutoff_date, stats_to_pull = get_input_data.get_input_data()
 
 # add headers to avoid 403 errors
 headers = {

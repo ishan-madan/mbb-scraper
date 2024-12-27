@@ -2,3 +2,4 @@ cbbpy
 requests
 beautifulsoup4
 pandas
+pyyaml
